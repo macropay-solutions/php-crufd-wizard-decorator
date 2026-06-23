@@ -17,7 +17,7 @@
   "require": {
     "php": "^8.2",
     "ext-json": "*",
-    "macropay-solutions/php-crufd-wizard": "*"
+    "macropay-solutions/php-crufd-wizard": "^1.0.0"
   },
   "require-dev": {
     "illuminate/database": "^10.48",
@@ -44,5 +44,6 @@
     "psr-4": {
       "MacropaySolutions\\CrufdWizardDecorator\\Test\\": "tests/"
     }
-  }
+  },
+  "minimum-stability": "RC"
 }
