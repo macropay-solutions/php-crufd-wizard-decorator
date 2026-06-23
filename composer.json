@@ -1,0 +1,48 @@
+{
+  "name": "macropay-solutions/php-crufd-wizard-decorator",
+  "type": "library",
+  "description": "Data composition/decoration for php-crufd-wizard library including url query language",
+  "keywords": [
+    "crud",
+    "crufd",
+    "wizard",
+    "decorator",
+    "composition",
+    "restful-api",
+    "url-query-language",
+    "free"
+  ],
+  "prefer-stable": true,
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "ext-json": "*",
+    "macropay-solutions/php-crufd-wizard": "*"
+  },
+  "require-dev": {
+    "illuminate/database": "^10.48",
+    "illuminate/http": "^10.48",
+    "illuminate/pagination": "^10.48",
+    "illuminate/routing": "^10.48",
+    "illuminate/validation": "^10.48",
+    "nesbot/carbon": "^2.62|^3.11",
+    "phpunit/phpunit": "^10.5",
+    "psr/log": "^1.0 || ^2.0 || ^3.0",
+    "symfony/http-foundation": "^6.4|^7.4"
+  },
+  "suggest": {
+    "macropay-solutions/php-framework": "dev-production",
+    "macropay-solutions/php-kernel": "dev-production",
+    "macropay-solutions/php-crufd-wizard-client": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MacropaySolutions\\CrufdWizardDecorator\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MacropaySolutions\\CrufdWizardDecorator\\Test\\": "tests/"
+    }
+  }
+}
