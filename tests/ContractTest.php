@@ -129,6 +129,10 @@ class ContractTest extends TestCase
         $middleware->setDecorator($decorator);
         $originalRequest = $request->all();
         $middleware->undecorateRequest($originalRequest, $request, 'list');
+        $container = new \MacropaySolutions\Kernel\Container\Container();
+        \MacropaySolutions\Kernel\Container\Container::setInstance($container);
+        $container->instance('request', $request);
+        $container->instance(\MacropaySolutions\Kernel\Http\Request::class, $request);
         self::assertInstanceOf(JsonResponse::class, $response = $controller->list($request));
         self::assertEquals([
             'has_more_pages' => false,
