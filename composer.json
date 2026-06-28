@@ -17,14 +17,10 @@
   "require": {
     "php": "^8.2",
     "ext-json": "*",
-    "macropay-solutions/php-crufd-wizard": "^1.0.0"
+    "macropay-solutions/php-crufd-wizard": "^1.0.0",
+    "macropay-solutions/php-kernel": "^1.0.0"
   },
   "require-dev": {
-    "illuminate/database": "^10.48",
-    "illuminate/http": "^10.48",
-    "illuminate/pagination": "^10.48",
-    "illuminate/routing": "^10.48",
-    "illuminate/validation": "^10.48",
     "nesbot/carbon": "^2.62|^3.11",
     "phpunit/phpunit": "^10.5",
     "psr/log": "^1.0 || ^2.0 || ^3.0",

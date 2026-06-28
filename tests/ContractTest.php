@@ -2,19 +2,19 @@
 
 namespace MacropaySolutions\CrufdWizardDecorator\Test;
 
-use Illuminate\Database\Connection;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Pagination\CursorPaginator;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
 use MacropaySolutions\CrufdWizard\Http\Controllers\ResourceControllerTrait;
 use MacropaySolutions\CrufdWizard\Models\BaseModel;
 use MacropaySolutions\CrufdWizard\Services\BaseResourceService;
 use MacropaySolutions\CrufdWizardDecorator\Decorators\AbstractResourceDecorator;
 use MacropaySolutions\CrufdWizardDecorator\Http\Middleware\Decorators\AbstractDecoratorMiddleware;
+use MacropaySolutions\Kernel\Database\Connection;
+use MacropaySolutions\Kernel\Database\Obvious\Builder;
+use MacropaySolutions\Kernel\Database\Obvious\Relations\Relation;
+use MacropaySolutions\Kernel\Http\JsonResponse;
+use MacropaySolutions\Kernel\Http\Request;
+use MacropaySolutions\Kernel\Pagination\CursorPaginator;
+use MacropaySolutions\Kernel\Pagination\LengthAwarePaginator;
+use MacropaySolutions\Kernel\Pagination\Paginator;
 use PHPUnit\Framework\TestCase;
 
 class ContractTest extends TestCase
@@ -73,7 +73,7 @@ class ContractTest extends TestCase
                                 return $includingPrimary ? ['id', 'column1', 'column2'] : ['column1', 'column2'];
                             }
 
-                            protected function newBaseQueryBuilder(): \Illuminate\Database\Query\Builder
+                            protected function newBaseQueryBuilder(): \MacropaySolutions\Kernel\Database\Query\Builder
                             {
                                 return (new Connection(new \PDO('sqlite::memory:')))->query();
                             }

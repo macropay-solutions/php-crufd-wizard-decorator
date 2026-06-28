@@ -2,9 +2,9 @@
 
 namespace MacropaySolutions\CrufdWizardDecorator\Support\Response;
 
-use Illuminate\Http\JsonResponse;
 use MacropaySolutions\CrufdWizard\Helpers\GeneralHelper;
 use MacropaySolutions\CrufdWizardDecorator\Helpers\LogHelper;
+use MacropaySolutions\Kernel\Http\JsonResponse;
 
 class ResponseBuilder
 {

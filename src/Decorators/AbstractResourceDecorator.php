@@ -2,8 +2,8 @@
 
 namespace MacropaySolutions\CrufdWizardDecorator\Decorators;
 
-use Illuminate\Support\Str;
 use MacropaySolutions\CrufdWizard\Models\BaseModel;
+use MacropaySolutions\Kernel\Support\Str;
 
 abstract class AbstractResourceDecorator implements ResourceDecoratorInterface
 {

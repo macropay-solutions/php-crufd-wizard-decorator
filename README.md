@@ -114,8 +114,8 @@ Example:
     
     namespace MacropaySolutions\CrufdWizardDecorator\Models;
     
-    use Illuminate\Database\Eloquent\Model;
-    use Illuminate\Database\Eloquent\Relations\HasOne;
+    use MacropaySolutions\Kernel\Database\Obvious\Model;
+    use MacropaySolutions\Kernel\Database\Obvious\Relations\HasOne;
     use MacropaySolutions\CrufdWizard\Models\BaseModel;
     
     class ExampleModel extends BaseModel
@@ -138,8 +138,8 @@ Example:
     
     namespace MacropaySolutions\CrufdWizardDecorator\Models;
     
-    use Illuminate\Database\Eloquent\Model;
-    use Illuminate\Database\Eloquent\Relations\HasMany;
+    use MacropaySolutions\Kernel\Database\Obvious\Model;
+    use MacropaySolutions\Kernel\Database\Obvious\Relations\HasMany;
     use MacropaySolutions\CrufdWizard\Models\BaseModel;
     
     class RelationExampleModel extends BaseModel

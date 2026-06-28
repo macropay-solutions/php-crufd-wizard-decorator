@@ -3,12 +3,12 @@
 namespace MacropaySolutions\CrufdWizardDecorator\Http\Middleware\Decorators;
 
 use Closure;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use MacropaySolutions\CrufdWizard\Helpers\GeneralHelper;
 use MacropaySolutions\CrufdWizard\Models\BaseModel;
 use MacropaySolutions\CrufdWizardDecorator\Decorators\AbstractResourceDecorator;
 use MacropaySolutions\CrufdWizardDecorator\Support\Response\ResponseBuilder;
+use MacropaySolutions\Kernel\Http\JsonResponse;
+use MacropaySolutions\Kernel\Http\Request;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
