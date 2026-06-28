@@ -23,6 +23,42 @@ class ContractTest extends TestCase
     public static ?array $bindings;
     public static ?BaseModel $model;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $app = new class () extends \MacropaySolutions\Kernel\Container\Container {
+            public function environment(string $env): bool {
+                return false;
+            }
+        };
+
+        $app->bind('log', function () {
+            return new class () {
+                public function warning(string $message): void {}
+                public function error(string $message): void {}
+            };
+        });
+
+        $app->bind('cache.store', function () {
+            return new class () {
+                public function remember(string $key, $ttl, \Closure $callback): mixed {
+                    return $callback();
+                }
+            };
+        });
+
+        $app->bind('translator', function () {
+            return new class () {
+                public function get(string $key): string { return $key; }
+                public function trans(string $key): string { return $key; }
+                public function choice(string $key): string { return $key; }
+            };
+        });
+
+        \MacropaySolutions\Kernel\Container\Container::setInstance($app);
+    }
+
     public function testFilter(): void
     {
         $controller = new class () {
@@ -129,8 +165,7 @@ class ContractTest extends TestCase
         $middleware->setDecorator($decorator);
         $originalRequest = $request->all();
         $middleware->undecorateRequest($originalRequest, $request, 'list');
-        $container = new \MacropaySolutions\Kernel\Container\Container();
-        \MacropaySolutions\Kernel\Container\Container::setInstance($container);
+        $container = \MacropaySolutions\Kernel\Container\Container::getInstance();
         $container->instance('request', $request);
         $container->instance(\MacropaySolutions\Kernel\Http\Request::class, $request);
         self::assertInstanceOf(JsonResponse::class, $response = $controller->list($request));
