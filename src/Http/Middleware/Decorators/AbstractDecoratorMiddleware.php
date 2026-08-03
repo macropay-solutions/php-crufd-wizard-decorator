@@ -7,10 +7,10 @@ use MacropaySolutions\CrufdWizard\Helpers\GeneralHelper;
 use MacropaySolutions\CrufdWizard\Models\BaseModel;
 use MacropaySolutions\CrufdWizardDecorator\Decorators\AbstractResourceDecorator;
 use MacropaySolutions\CrufdWizardDecorator\Support\Response\ResponseBuilder;
-use MacropaySolutions\Kernel\Http\Base\BinaryFileResponse;
-use MacropaySolutions\Kernel\Http\Base\StreamedResponse;
 use MacropaySolutions\Kernel\Http\JsonResponse;
 use MacropaySolutions\Kernel\Http\Request;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 abstract class AbstractDecoratorMiddleware
 {
