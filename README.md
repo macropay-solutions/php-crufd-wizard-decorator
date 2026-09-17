@@ -1,4 +1,4 @@
-# php-crufd-wizard-decorator - RetrieveQL
+# php-crufd-wizard-decorator - CrufdQL
 
 [![Build Status](https://github.com/macropay-solutions/php-crufd-wizard-decorator/actions/workflows/tests.yml/badge.svg)](https://github.com/macropay-solutions/php-crufd-wizard-decorator/actions)
 [![Total Downloads](https://img.shields.io/packagist/dt/macropay-solutions/php-crufd-wizard-decorator)](https://packagist.org/packages/macropay-solutions/php-crufd-wizard-decorator)
