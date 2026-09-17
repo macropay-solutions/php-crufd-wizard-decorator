@@ -33,12 +33,12 @@ class ContractTest extends TestCase
             }
         };
 
-        $app->bind('log', function () {
+        $app->bind('log', [function () {
             return new class () {
                 public function warning(string $message): void {}
                 public function error(string $message): void {}
             };
-        });
+        }, '__invoke']);
 
         $app->bind('cache.store', function () {
             return new class () {
