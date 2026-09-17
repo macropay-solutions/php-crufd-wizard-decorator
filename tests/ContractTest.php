@@ -40,21 +40,21 @@ class ContractTest extends TestCase
             };
         }, '__invoke']);
 
-        $app->bind('cache.store', function () {
+        $app->bind('cache.store', [function () {
             return new class () {
                 public function remember(string $key, $ttl, \Closure $callback): mixed {
                     return $callback();
                 }
             };
-        });
+        }, '__invoke']);
 
-        $app->bind('translator', function () {
+        $app->bind('translator', [function () {
             return new class () {
                 public function get(string $key): string { return $key; }
                 public function trans(string $key): string { return $key; }
                 public function choice(string $key): string { return $key; }
             };
-        });
+        }, '__invoke']);
 
         \MacropaySolutions\Kernel\Container\Container::setInstance($app);
     }
