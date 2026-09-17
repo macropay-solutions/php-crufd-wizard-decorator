@@ -123,33 +123,13 @@ class ContractTest extends TestCase
             }
         };
 
-        $request = new class([
+        $request = new Request([
             'col1' => 5,
             'col2' => 3,
             'col3' => 3,
             'sort' => [['by' => 'col2'], ['by' => 'col1', 'dir' => 'ASC'], ['by' => 'col3', 'dir' => 'ASC']],
             'perPage' => 50,
-        ]) extends Request {
-            public function forceReplace(array $data): Request
-            {
-                /** @var Request $this */
-
-                $this->query->replace();
-                $this->request->replace();
-                $this->replace($data);
-
-                return $this;
-            }
-            public function forceOffsetUnset(string $offset): Request {
-                /** @var Request $this */
-
-                $this->query->remove($offset);
-                $this->request->remove($offset);
-                $this->offsetUnset($offset);
-
-                return $this;
-            }
-        };
+        ]);
 
         $decorator = new class(ContractTest::$model) extends AbstractResourceDecorator {
             public function getResourceMappings(): array
