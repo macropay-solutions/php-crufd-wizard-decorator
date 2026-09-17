@@ -56,6 +56,16 @@ class ContractTest extends TestCase
             };
         }, '__invoke']);
 
+        $app->bind('events', [function () {
+            return new class () {
+                public function dispatch($event, $payload = [], $halt = false) { return null; }
+                public function listen($events, $listener = null) {}
+                public function forget($event) {}
+                public function until($event, $payload = []) { return null; }
+                public function __call($name, $arguments) { return null; }
+            };
+        }, '__invoke']);
+
         \MacropaySolutions\Kernel\Container\Container::setInstance($app);
     }
 
