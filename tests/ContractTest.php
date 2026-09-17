@@ -57,12 +57,16 @@ class ContractTest extends TestCase
         }, '__invoke']);
 
         $app->bind('events', [function () {
-            return new class () {
-                public function dispatch($event, $payload = [], $halt = false) { return null; }
+            return new class () implements \MacropaySolutions\Kernel\Contracts\Events\Dispatcher {
                 public function listen($events, $listener = null) {}
-                public function forget($event) {}
-                public function until($event, $payload = []) { return null; }
-                public function __call($name, $arguments) { return null; }
+                public function hasListeners(string $eventName): bool { return false; }
+                public function subscribe(object|string $subscriber) {}
+                public function until(string|object $event, mixed $payload = []) { return null; }
+                public function dispatch($event, $payload = [], $halt = false) { return null; }
+                public function push(string $event, array $payload = []) {}
+                public function flush(string $event) {}
+                public function forget(string $event) {}
+                public function forgetPushed() {}
             };
         }, '__invoke']);
 
