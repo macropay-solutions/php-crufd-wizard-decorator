@@ -56,10 +56,8 @@ class ContractTest extends TestCase
             };
         }, '__invoke']);
 
-        $dispatcherMock = $this->createMock(\MacropaySolutions\Kernel\Contracts\Events\Dispatcher::class);
-
-        $app->bind('events', [function () use ($dispatcherMock) {
-            return $dispatcherMock;
+        $app->bind('events', [function () use ($app) {
+            return new \MacropaySolutions\Kernel\Events\Dispatcher($app);
         }, '__invoke']);
 
         \MacropaySolutions\Kernel\Container\Container::setInstance($app);
