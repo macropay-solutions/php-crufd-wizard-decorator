@@ -98,11 +98,11 @@ class ContractTest extends TestCase
                     {
                         $this->model = ContractTest::$model = new class () extends BaseModel {
                             protected bool $indexRequiredOnFiltering = false;
-                            protected $fillable = [
+                            protected array $fillable = [
                                 'column1',
                                 'column2',
                             ];
-                            protected $table = 'test';
+                            protected string $table = 'test';
 
                             public function getColumns(bool $includingPrimary = true): array
                             {
