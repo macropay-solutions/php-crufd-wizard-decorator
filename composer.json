@@ -12,7 +12,6 @@
     "url-query-language",
     "free"
   ],
-  "prefer-stable": true,
   "license": "MIT",
   "require": {
     "php": "^8.2",
@@ -41,5 +40,6 @@
       "MacropaySolutions\\CrufdWizardDecorator\\Test\\": "tests/"
     }
   },
-  "minimum-stability": "RC"
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
