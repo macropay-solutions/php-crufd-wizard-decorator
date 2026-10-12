@@ -12,18 +12,18 @@ This can be used for decorating [php-crufd-wizard](https://github.com/macropay-s
 
 The Decorator suite acts as the presentation layer for your microservices, bridging the gap between your internal database structure and your public API contract.
 
-| Feature | Decorator Freemium (`php-crufd-wizard-decorator`) | Decorator Pro (`php-rest-wizard-decorator`)                                                |
-| :--- | :--- |:-------------------------------------------------------------------------------------------|
-| **Schema Masking** | ✅ Rename/Map resource & relation columns | ✅ Rename/Map resource & relation columns                                                   |
-| **Relation Wrapping** | ✅ Decorate attributes of loaded relations | ✅ Decorate attributes of loaded relations                                                  |
-| **Data Flattening** | ✅ **Single Table Flattening** (Merge resource + relations into one flat response) | ✅ **Single Table Flattening** (Merge resource + relations into one flat response)          |
-| **Virtual Columns** | ❌ | ✅ **Composed Columns** (Create new fields from multiple resource/relation columns)         |
-| **Memory-Safe Export** | ❌ | ✅ **Streamed CSV Download** (Direct to client; no file saved on server)                    |
-| **Filter Transformation** | ❌ | ✅ **Query Rewriting** (Map resource columns to relation filters via URL query string)      |
-| **Response Control** | ✅ Standard JSON decoration | ✅ **Restricted Columns** (Return only requested keys, including in CSV streams)            |
-| **Relational Updates** | ❌ | ✅ **One-to-One Update** (Update related models during resource update)                     |
-| **Aggregations** | ❌ | ✅ **Resource & Relation Aggregations** (Sums, Avgs, etc. on children) from php-rest-wizard |
-| **Security (XSS)** | ✅ **Auto-Sanitization** (All JSON string values parsed by `htmlspecialchars`) | ✅ **Auto-Sanitization** (All JSON string values parsed by `htmlspecialchars`)              |
+| Feature | Decorator Freemium (`php-crufd-wizard-decorator`) | Decorator Pro (`php-cruxd-wizard-decorator`)                                                |
+| :--- | :--- |:--------------------------------------------------------------------------------------------|
+| **Schema Masking** | ✅ Rename/Map resource & relation columns | ✅ Rename/Map resource & relation columns                                                    |
+| **Relation Wrapping** | ✅ Decorate attributes of loaded relations | ✅ Decorate attributes of loaded relations                                                   |
+| **Data Flattening** | ✅ **Single Table Flattening** (Merge resource + relations into one flat response) | ✅ **Single Table Flattening** (Merge resource + relations into one flat response)           |
+| **Virtual Columns** | ❌ | ✅ **Composed Columns** (Create new fields from multiple resource/relation columns)          |
+| **Memory-Safe Export** | ❌ | ✅ **Streamed CSV Download** (Direct to client; no file saved on server)                     |
+| **Filter Transformation** | ❌ | ✅ **Query Rewriting** (Map resource columns to relation filters via URL query string)       |
+| **Response Control** | ✅ Standard JSON decoration | ✅ **Restricted Columns** (Return only requested keys, including in CSV streams)             |
+| **Relational Updates** | ❌ | ✅ **One-to-One Update** (Update related models during resource update)                      |
+| **Aggregations** | ❌ | ✅ **Resource & Relation Aggregations** (Sums, Avgs, etc. on children) from php-cruxd-wizard |
+| **Security (XSS)** | ✅ **Auto-Sanitization** (All JSON string values parsed by `htmlspecialchars`) | ✅ **Auto-Sanitization** (All JSON string values parsed by `htmlspecialchars`)               |
 
 ---
 
